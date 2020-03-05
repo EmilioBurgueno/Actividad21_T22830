@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col s12">
+    <h1>Add a new Contact</h1>
+  </div>
+</div>
+
+<div class="row">
+  <img class="materialboxed" width="150" src='https://www.kindpng.com/picc/m/111-1114911_person-icon-png-download-icono-usuario-png-transparent.png'>
+  <form class="col s12" [formGroup]="personForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">assignment_ind</i>
+        <input formControlName="id" id="personID" type="text" class="validate">
+        <label for="personID">Contact ID</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName = "name" id="name" type="text" class="validate">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">call</i>
+        <input formControlName = "phone" id="cellphone" type="text" class="validate">
+        <label for="cellphone">Cellphone</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">email</i>
+        <input formControlName = "email" id="email" type="text" class="validate">
+        <label for="email">E-mail</label>
+      </div>
+
+      <div class="row">
+        <div class="col s8">
+          <button class="waves-effect waves-light btn-large">Add Person</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

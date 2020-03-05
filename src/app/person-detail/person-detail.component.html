@@ -1,0 +1,102 @@
+<div *ngIf="display">
+<div class="row">
+  <div class="col s12">
+    <h3>Contact Detail</h3>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col s6">
+    <img class="materialboxed" width="150" src='https://www.kindpng.com/picc/m/111-1114911_person-icon-png-download-icono-usuario-png-transparent.png'>
+  </div>
+
+    <form class="col s6" [formGroup]="personForm">
+    <div class="row">
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input disabled formControlName = "name" id="name" type="text" class="validate" value={{person?.name}}>
+        <label class = "active" for="name">Name</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">call</i>
+        <input disabled formControlName = "phone" id="phone" type="text" class="validate" value={{person?.phone}}>
+        <label class = "active" for="cellphone">Phone</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">email</i>
+        <input disabled formControlName = "email" id="email" type="text" class="validate" value={{person?.email}}>
+        <label class = "active"  for="email">E-mail</label>
+      </div>
+
+      <div class="row">
+        <div class="col s8">
+          <button class="waves-effect waves-light btn-large" (click)="update()">EDIT</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s8">
+          <button class="waves-effect waves-light btn-large" (click)="deletePerson(person?.id)">DELETE</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+</div>
+<!-- update -->
+<div *ngIf="display1">
+  <div class="row">
+    <div class="col s12">
+      <h3>Contact Detail</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <img class="materialboxed" width="150" src='https://www.kindpng.com/picc/m/111-1114911_person-icon-png-download-icono-usuario-png-transparent.png'>
+    </div>
+
+    <form class="col s6" [formGroup]="personForm">
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input formControlName = "name" id="name" type="text" class="validate" value={{person?.name}}>
+          <label class = "active" for="name">Name</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">call</i>
+          <input  formControlName = "phone" id="phone" type="text" class="validate" value={{person?.phone}}>
+          <label class = "active" for="phone">Phone</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input  formControlName = "email" id="email" type="text" class="validate" value={{person?.email}}>
+          <label class = "active" for="email">E-mail</label>
+        </div>
+
+        <div class="row">
+          <div class="col s8">
+            <button class="waves-effect waves-light btn-large" (click)="update();onSubmit()">UPDATE</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s8">
+            <button class="waves-effect waves-light btn-large" (click)="update()">CANCEL</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</div>
+
